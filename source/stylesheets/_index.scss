@@ -1,0 +1,135 @@
+// Homepage styles
+
+.index {
+
+  .featured--link a {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-image: url(../images/arrow.svg);
+    box-sizing: border-box;
+    background-position: right 1em center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 1.6rem;
+    padding-right: 4rem;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 6px solid;
+    background-color: inherit;
+    color: #040aae;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+  }
+
+  // background-image: url("/images/background_new.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @media screen and (max-width: $mobile) {
+    background-size: cover;
+    background-position-x: 62%;
+  }
+
+  .container,
+  .navbar-container {
+
+    grid-template-columns: 100%;
+    max-width: 650px;
+
+  }
+
+  .navbar-container a {
+    background-color: #ffc092;
+    color: #010946;
+    padding: 0 4px;
+  }
+
+  .list-unstyled {
+
+    li {
+
+      margin-bottom: 8px;
+
+      @media screen and (max-width: $mobile) {
+        margin-bottom: 12px;
+      }
+    }
+
+    a {
+
+      @media screen and (max-width: $mobile) {
+        padding: 6px 4px;
+      }
+    }
+  }
+
+  header {
+
+    grid-column: 1 / 2;
+  }
+
+  .articles {
+
+    grid-column: 1 / 2;
+  }
+
+  h1 {
+
+    font-size: 3rem;
+    margin: 0 0 2rem 0;
+    line-height: 1.1;
+    // background-color: #ffefc1;
+
+    @media screen and (max-width: $mobile) {
+
+      font-size: 3rem;
+      margin-top: 0;
+    }
+  }
+
+  a {
+
+    color: #050dea;
+    text-decoration: underline;
+
+    &:hover {
+
+      color: white;
+      background-color: $purple;
+    }
+
+  }
+
+  .list-featured {
+
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    @extend .list-inline;
+
+    li {
+
+      width: 32%;
+
+      @media screen and (max-width: $mobile) {
+
+          display: block;
+          width: 100%;
+
+      }
+
+      &::after {
+
+        content: "";
+        border-bottom: 5px dashed;
+        display: block;
+        width: 3rem;
+        margin-bottom: 1rem;
+        margin-top: 0.3rem;
+
+      }
+    }
+  }
+}

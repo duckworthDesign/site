@@ -1,0 +1,49 @@
+---
+pageable: true
+per_page: 100
+layout: index
+---
+<main role="main">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Articles tagged '<%= tagname %>'</h1>
+        <% if paginate && num_pages > 1 %>
+          <p>Page <%= page_number %> of <%= num_pages %></p>
+
+          <% if prev_page %>
+            <p><%= link_to 'Previous page', prev_page %></p>
+          <% end %>
+        <% end %>
+
+        <ol class="list-unstyled list-articles">
+          <% page_articles.each_with_index do |article, i| %>
+            <li><%= link_to article.title, article %> - <span><%= article.date.strftime('%e %B %Y') %></span></li>
+          <% end %>
+        </ol>
+
+        <% if paginate %>
+          <% if next_page %>
+            <p><%= link_to 'Next page', next_page %></p>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container container-marketing">
+    <div class="row">
+      <div class="col-md-6">
+        <section class="section">
+          <h2 class="h4">Get in touch</h2>
+          <p>If you're interested in working with us or want to hear more about us, our teams or our work, fill in the form using the button and we'll get back to you</p>
+          <p><a class="btn btn-primary" href="https://forms.gle/Ssz4tNUnJSkAgVQR6">Get in touch</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+

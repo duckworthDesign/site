@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="#eff0ea" name="theme-color"/>
+    <title>
+      duckworth.design <%= ' - ' + current_article.title unless current_article.nil? %>
+    </title>
+    <%= feed_tag :atom, ""  + blog.options.prefix.to_s + "/feed.xml", title: "Atom Feed" %>
+    <%= stylesheet_link_tag 'styles' %>
+    <%= javascript_include_tag 'main' %>
+    <%= javascript_include_tag 'bootstrap.min' %>
+    <%= favicon_tag '/images/dd.png' %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@500;900&display=swap" rel="stylesheet">
+    
+  </head>
+  <body class="<%= page_classes %>">
+  <%= partial "./layouts/partials/nav" %>
+
+<div class="container-breadcrumb">
+  <div class="container ">
+        <div class="row">
+          <div class="col-md-12">
+
+          <ol class="breadcrumb small">
+            <li><%= link_to "Home", "/" %></li>
+            <li><%= link_to "Blog", "blog" %></li>
+            <li class="active"><%= current_page.data.title %></li>
+          </ol>
+
+          </div>
+        </div>
+  </div>
+</div>
+
+      
+
+      <div class="container" id="<%= title_as_class(current_article.title) %>">
+        <div class="row">
+          <div class="col-md-7">
+          <% if content_for?(:hero) %>
+                  <h1>
+                    <%= current_page.data.title %>
+                  </h1>
+                  <%= yield_content :hero %>
+                <% else %>
+                  <h1>
+                    <%= current_page.data.title %>
+                  </h1>
+                <% end %>
+              </div>
+        
+          <div class="col-md-4">
+
+          </div>
+           <div class="col-md-7">
+              
+            <%= yield %>
+
+
+            <nav class="pagination">
+              <div class="prev">
+                <% prev_article = current_article.previous_article %>
+                <% if prev_article %>
+                  Previous article:
+                  <a href="<%= prev_article.url %>" rel="prev">
+                    <%= prev_article.title %>
+                  </a>
+                <% end %>
+              </div>
+              <div class="next">
+                <% next_article = current_article.next_article %>
+                <% if next_article %>
+                  Next article:
+                  <a href="<%= next_article.url %>" rel="next">
+                    <%= next_article.title %>
+                  </a>
+                <% end %>
+              </div>
+            </nav>
+          </div>
+
+          <div class="col-md-4">
+            <aside class="sidebar">
+            <h2 class="h4">Recent Articles</h2>
+            <ol>
+              <% blog.articles[0...10].each do |article| %>
+                <li>
+                  <%= link_to article.title, article %>
+                  <span>
+                    <%= article.date.strftime('%b %e') %>
+                  </span>
+                </li>
+              <% end %>
+            </ol>
+            <h2 class="h4">Tags</h2>
+            <ol>
+              <% blog.tags.each do |tag, articles| %>
+                <li>
+                  <%= link_to "#{tag} (#{articles.size})", tag_path(tag) %>
+                </li>
+              <% end %>
+            </ol>
+          </aside>
+
+
+          </div>
+        </div>
+      </div>
+
+    
+    
+
+
+    <%= partial "./layouts/partials/footer" %>
+   
+  </body>
+</html>

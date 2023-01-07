@@ -1,0 +1,57 @@
+---
+pageable: true
+per_page: 100
+layout: index
+---
+<main role="main">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+
+    <h1>Archive for
+      <% case page_type
+        when 'day' %>
+        <%= Date.new(year, month, day).strftime('%b %e %Y') %>
+      <% when 'month' %>
+        <%= Date.new(year, month, 1).strftime('%b %Y') %>
+      <% when 'year' %>
+        <%= year %>
+      <% end %>
+    </h1>
+
+    <% if paginate && num_pages > 1 %>
+      <p>Page <%= page_number %> of <%= num_pages %></p>
+
+      <% if prev_page %>
+        <p><%= link_to 'Previous page', prev_page %></p>
+      <% end %>
+    <% end %>
+
+    <ul>
+      <% page_articles.each_with_index do |article, i| %>
+        <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+      <% end %>
+    </ul>
+
+    <% if paginate %>
+      <% if next_page %>
+        <p><%= link_to 'Next page', next_page %></p>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container container-marketing">
+    <div class="row">
+      <div class="col-md-6">
+        <section class="section">
+          <h2 class="h4">Get in touch</h2>
+          <p>If you're interested in working with us or want to hear more about us, our teams or our work, fill in the form using the button and we'll get back to you</p>
+          <p><a class="btn btn-primary" href="https://forms.gle/Ssz4tNUnJSkAgVQR6">Get in touch</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>

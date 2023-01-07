@@ -1,0 +1,50 @@
+!!!
+%html(lang="en")
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge;chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title
+      GrilloPress#{' - ' + current_article.title unless current_article.nil?}
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    = stylesheet_link_tag 'styles'
+    = javascript_include_tag 'main'
+    = favicon_tag '/images/me.jpg'
+    %link{:href => "https://fonts.googleapis.com/css?family=Overpass:400,700", :rel => "stylesheet"}/
+    :javascript
+      (function() {
+        var script = document.createElement('script');
+        window.counter = 'https://grillopress.goatcounter.com/count'
+        script.async = 1;
+        script.src = '//gc.zgo.at/count.js';
+        var ins = document.getElementsByTagName('script')[0];
+        ins.parentNode.insertBefore(script, ins)
+      })();
+  %body
+    %nav.navbar
+      %div.navbar-container
+        %div
+          = link_to "Andrew Duckworth", "/"
+    %main.container{:role => "main"}
+      %section
+        = yield
+      %aside.sidebar
+        %h2 Recent Articles
+        %ol
+          - blog.articles[0...10].each do |article|
+            %li
+              = link_to article.title, article
+              %span= article.date.strftime('%b %e')
+        %h2 Tags
+        %ol
+          - blog.tags.each do |tag, articles|
+            %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+        %h2 By Year
+        %ol
+          - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+            %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+    %footer.container
+      %p
+        Copyright 2017-#{Date.current.year} Andrew Duckworth
+        |
+        = link_to "@AndrewDuck_", "https://twitter.com/AndrewDuck_"

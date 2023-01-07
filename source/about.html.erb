@@ -1,0 +1,85 @@
+---
+pageable: true
+per_page: 100
+layout: index
+title: About
+---
+
+<main role="main">
+
+<div class="container-breadcrumb">
+  <div class="container ">
+        <div class="row">
+          <div class="col-md-12">
+
+          <ol class="breadcrumb small">
+            <li><%= link_to "Home", "/" %></li>
+            <li class="active"><%= current_page.data.title %></li>
+          </ol>
+
+          </div>
+        </div>
+  </div>
+  </div>
+
+
+  <div class="container container-marketing">
+
+    <div class="row">
+     <div class="col-md-12">
+     <h1>About</h1>
+     </div>
+
+      <div class="col-md-7">
+
+        
+
+        <p>Founded in 2022. Leaning on expertise from decades working in health, government, education and start ups, <%= link_to 'duckworth.design', "/" %> is a small product and design consultancy in the UK.</p>
+        <p>We make better products and services by bringing highly skilled experts in user research, design and product management to tackle your problems.</p>
+        <p>We do this through:</p>
+        <ul>
+          <li>hands on delivery of service and interaction design, user research and product management</li>
+          <li>advice and guidance. Supporting you to run and design your services. As well as grow your user-centred design functions.</li>
+          <li>support and training. Through introductory courses to bespoke training and support packages for your teams. Be they developing their leadership skills or starting their journey on service design.</li>
+        </ul>
+
+        <h3>Our approach to things</h3>
+
+        <p>We're a firm believer that great user centred design finds a way of adding value rapidly. And we do that by taking a pragmatic approach.</p>
+        <p>We work with technologists, policy teams and founders to realise their goals. And do that through user-centred service design.</p>
+        <p>We're not idealists. We're about delivery. But the delivery of real, sustainable value. This happens when teams understand each other, their users and where they want to get to.</p>
+        <p>When we join a project, we make sure we kick off with a "set up for success" session. This helps us and the teams we work with know what to expect and what we all need to do to deliver the outcomes we need.</p>
+        <p>If you're unsure of the approach you should take, we can help with that too.</p>
+        <p>You can find out more about how we do things by reading <a href="/our-playbook/">our playbook</a></p>
+
+        <h3>Work with us on a project</h3>
+
+        <p>If you're interested in working with us or want to hear more about us, our teams or our work, fill in the form using the button and we'll get back to you</p>
+          <p><a class="btn btn-primary" href="https://forms.gle/Ssz4tNUnJSkAgVQR6">Talk to us about a project</a></p>
+          <p>You can also <a href="/services.html">see more detail about the services we offer</a>.</p>
+
+
+        <h3>Our network</h3>
+        <p>Part of our mission for 2023 is to grow our network to help the organisations we work with deliver success. If you're a freelancer or contractor <a href="https://forms.gle/fefoXomPVNoEwzct9">join our network</a>.</p>
+        <p>We'll get in touch when a project arises that makes sense for us to do together.</p>
+
+      </div>
+
+      <div class="col-md-3 col-offset-1">
+      <aside>
+        <h3 class="margin-top-0">Related pages</h3>
+        <ul class="list-unstyled">
+          <li><%= link_to "Our work", "/our-work" %></li>
+          <li><%= link_to "Services", "services" %></li>
+          <li><%= link_to "Contact", "contact" %></li>
+          <li><%= link_to "Blog", "blog", :class => "" %></li>
+        </ul>
+      </aside>
+      
+      </div>
+
+    </div>
+
+    </div>
+
+</main>

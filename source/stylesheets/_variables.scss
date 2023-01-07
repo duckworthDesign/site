@@ -1,0 +1,50 @@
+// base
+$serif: "Times New Roman", "Droid Serif", "Times", "Source Serif Pro", serif;
+$sans-serif: 'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-family-base: $sans-serif;
+$font-size-base: 20px;
+$font-weight-base: 500;
+$line-height-base: 1.6;
+
+
+// green #00ff87
+// black #010814
+// dark green #218e54
+// 5px 5px 0 0 #218e54
+// #dfffef
+
+// colours
+
+$white: #fff;
+$black: #010946;
+$red: #eb0c00;
+$yellow: #ff9f1c;
+$peach: #ffc092;
+$brand: #15174a;
+$brand-secondary: #ff382f;
+$white: #fff;
+$purple: #3147c5;
+$body-color: $black;
+$body-bg: #eff0ea;
+
+// text
+
+$headings-margin-bottom:  1.2rem;
+$paragraph-margin-bottom: .9rem;
+$dt-font-weight: 800;
+$text-muted: lighten($body-color, 10%);
+$table-cell-padding: .2rem;
+
+// links and buttons
+
+$link-color: $red;
+$link-decoration: none;
+$link-hover-color: $white;
+$link-hover-decoration: none;
+$link-hover-background: $red;
+
+// screensizes
+
+$mobile: 600px;
+$tablet: 800px;
+$desktop: 950px;

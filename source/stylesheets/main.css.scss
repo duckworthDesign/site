@@ -1,0 +1,79 @@
+@import 'variables';
+@import 'reboot';
+@import 'typography';
+@import 'pagination';
+@import 'index';
+@import 'mailchimp';
+@import 'grid';
+
+.hero {
+
+  // background-color: $brand;
+  // color: $brand-secondary;
+  padding: 4rem 0;
+
+  h1 {
+
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+}
+
+// Page/post containers
+
+.blog-post,
+.summary-page,
+.calendar-page {
+
+  padding: 2rem 0;
+
+  ul,
+  ol {
+
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: .5rem 0;
+  }
+}
+
+// sidebar
+
+aside .sidebar {
+
+  padding: 2rem 0;
+
+  h2,
+  h3 {
+
+    font-size: 1.25rem;
+
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: .5rem 0;
+  }
+}
+
+// Time
+
+time {
+
+  font-size: 16px;
+}
+
+p {
+
+color: darken($black, 10);
+}
+
+.margin-bottom-1  {
+
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-0  {
+
+  margin-bottom: 0;
+}
