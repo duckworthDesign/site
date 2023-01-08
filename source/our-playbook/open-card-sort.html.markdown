@@ -29,6 +29,6 @@ If you're looking for your users to work with existing categories, you may want 
 
 ## Related techniques
 
-- [Closed card sorts]('/our-playbook/closed-card-sort.html)
+- [Closed card sorts](/our-playbook/closed-card-sort.html)
 
 [Back to playbook](/our-playbook/)
