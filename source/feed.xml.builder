@@ -1,8 +1,8 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  site_url = "https://grillopress.github.io/"
-  xml.title "Andrew Duckworth"
-  xml.subtitle "Designer, artist"
+  site_url = "https://duckworth.design"
+  xml.title "duckworth.design"
+  xml.subtitle "A small design and product consultancy in the UK"
   xml.id URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, current_page.path), "rel" => "self"
